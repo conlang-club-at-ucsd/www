@@ -930,7 +930,7 @@
    "ety": "a priori"
   },
   {
-   "t": "etaaliris",
+   "t": "etaalirisir",
    "en": "physics",
    "pos": "Noun"
   },
@@ -1157,7 +1157,7 @@
    ]
   },
   {
-   "t": "goglegiriris",
+   "t": "goglegiririsir",
    "en": "agricultural science",
    "pos": "Noun"
   },
@@ -1724,7 +1724,7 @@
    "pos": "Noun"
   },
   {
-   "t": "ipaasiriris",
+   "t": "ipaasiririsir",
    "en": "kinematics",
    "pos": "Noun"
   },
@@ -1955,7 +1955,7 @@
    ]
   },
   {
-   "t": "izvniris",
+   "t": "izvnirisir",
    "en": "anthropology",
    "pos": "Noun"
   },
@@ -2292,7 +2292,7 @@
    ]
   },
   {
-   "t": "kaapiliris",
+   "t": "kaapilirisir",
    "en": "zoology",
    "pos": "Noun"
   },
@@ -4288,7 +4288,7 @@
    "pos": "Noun"
   },
   {
-   "t": "nufoxiriris",
+   "t": "nufoxiririsir",
    "en": "mathematics",
    "pos": "Noun",
    "cats": [
@@ -4634,7 +4634,7 @@
    ]
   },
   {
-   "t": "pikuaasirunoiris",
+   "t": "pikuaasirunoirisir",
    "en": "sociology",
    "pos": "Noun"
   },
@@ -5109,7 +5109,7 @@
    "pos": "Adjective"
   },
   {
-   "t": "segentikitliriris",
+   "t": "segentikitliririsir",
    "en": "biochemistry",
    "pos": "Noun"
   },
@@ -5549,7 +5549,7 @@
    "pos": "Noun"
   },
   {
-   "t": "tikitliriris",
+   "t": "tikitliririsir",
    "en": "chemistry",
    "pos": "Noun",
    "cats": [
@@ -5657,7 +5657,7 @@
    "pos": "Noun"
   },
   {
-   "t": "tlicugaairis",
+   "t": "tlicugaairisir",
    "en": "computer science",
    "pos": "Noun"
   },
@@ -5906,7 +5906,7 @@
    ]
   },
   {
-   "t": "tselitsolaamiriris",
+   "t": "tselitsolaamiririsir",
    "en": "gynecology",
    "pos": "Noun"
   },
@@ -6203,7 +6203,7 @@
    "pos": "Noun"
   },
   {
-   "t": "tumviris",
+   "t": "tumvirisir",
    "en": "psychology",
    "pos": "Noun"
   },
@@ -6216,7 +6216,7 @@
    ]
   },
   {
-   "t": "tumvrohesiris",
+   "t": "tumvrohesirisir",
    "en": "psychiatry",
    "pos": "Noun"
   },
@@ -6267,7 +6267,7 @@
    ]
   },
   {
-   "t": "tusamiris",
+   "t": "tusamirisir",
    "en": "anatomy",
    "pos": "Noun",
    "cats": [
@@ -6275,7 +6275,7 @@
    ]
   },
   {
-   "t": "tusamirisxeu",
+   "t": "tusamirisirxeu",
    "en": "anatomical",
    "pos": "Adjective"
   },
@@ -6904,7 +6904,7 @@
    ]
   },
   {
-   "t": "zauniris",
+   "t": "zaunirisir",
    "en": "botany",
    "pos": "Noun"
   },
