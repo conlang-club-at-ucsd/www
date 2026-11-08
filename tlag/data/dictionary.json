@@ -2523,6 +2523,21 @@
    ]
   },
   {
+   "t": "keci",
+   "en": "language",
+   "pos": "Noun",
+   "ety": "a priori",
+   "cats": [
+    "linguistics"
+   ],
+   "ex": [
+    {
+     "en": "A language is a dialect with an army and a navy",
+     "gloss": "language dialect army and navy COM"
+    }
+   ]
+  },
+  {
    "t": "keciri",
    "en": "hawk",
    "pos": "Noun",
@@ -2859,7 +2874,7 @@
    ],
    "ex": [
     {
-     "tlag": "Brother, may I have some oats?",
+     "en": "Brother, may I have some oats?",
      "gloss": "brother INT allow that.COMP IRR-have some oat"
     }
    ]
