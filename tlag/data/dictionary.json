@@ -6397,12 +6397,24 @@
    ]
   },
   {
-   "t": "Ukrajinsvkv",
-   "en": "Ukrainian language",
-   "pos": "Proper noun",
+   "t": "uvluvu",
+   "en": "California spiny lobster, sapphic person",
+   "pos": "Noun",
+   "ety": "from Barbareño wuluwul and Ventureño wuluwuł, influenced by English WLW"
    "cats": [
-    "languages"
+    "LGBTQ", "organisms"
+   ],
+   "ex": [
+    {
+     "en": "Sapphic person with no California spiny lobster to love"
+    }
    ]
+  },
+    {
+   "t": "uluvu",
+   "en": "to sell, to betray",
+   "pos": "Verb",
+   "ety": "a priori"
   },
   {
    "t": "umaas",
