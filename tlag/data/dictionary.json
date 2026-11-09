@@ -12,7 +12,7 @@
   },
   {
    "t": "aabaakaatl",
-   "en": "avocado",
+   "en": "avocado", "lawyer (humorous)"
    "ipa": "[ɑ.b̪͡vɑ.kʼɑʈ͡ɭ˔]",
    "pos": "Noun",
    "ety": "from Nahuatl",
@@ -135,6 +135,15 @@
     "countries"
    ]
   },
+    {
+   "t": "Aazarbajtsaan keci",
+   "en": "Azerbaijani language",
+   "pos": "Proper noun",
+   "ety": "Aazarbajtsaan 'Azerbaijan + keci 'language'",
+   "cats": [
+    "countries"
+   ]
+  },
   {
    "t": "agaa",
    "en": "brain",
@@ -158,6 +167,7 @@
    "t": "agaa'upilaa",
    "en": "brainworm",
    "pos": "Noun"
+   "ety": "agaa 'brain' + upilaa 'worm', calque of English brainworm"
   },
   {
    "t": "agari",
