@@ -135,7 +135,7 @@
     "countries"
    ]
   },
-    {
+  {
    "t": "Aazarbajtsaan keci",
    "en": "Azerbaijani language",
    "pos": "Proper noun",
@@ -154,20 +154,20 @@
    ],
    "ex": [
     {
-     "tlag": "this is your brain on drugs"
+     "en": "this is your brain on drugs"
     }
    ]
   },
   {
    "t": "agaairisir",
    "en": "neuroscience",
-   "pos": "Noun"
+   "pos": "Noun",
   },
   {
    "t": "agaa'upilaa",
    "en": "brainworm",
-   "pos": "Noun"
-   "ety": "agaa 'brain' + upilaa 'worm', calque of English brainworm"
+   "pos": "Noun",
+   "ety": "agaa 'brain' + upilaa 'worm', calque of English brainworm",
   },
   {
    "t": "agari",
@@ -176,7 +176,7 @@
    "ety": "a priori",
    "ex": [
     {
-     "tlag": "Just do it!"
+     "en": "Just do it!"
     }
    ]
   },
@@ -205,7 +205,7 @@
    ],
    "ex": [
     {
-     "tlag": "dip me in honey, and throw me to the lesbians"
+     "en": "dip me in honey, and throw me to the lesbians"
     }
    ]
   },
