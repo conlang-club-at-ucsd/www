@@ -1328,6 +1328,7 @@
    "t": "horafaa",
    "en": "Thai basil",
    "pos": "Noun",
+   "ety": "From Thai โหระพา (hǒo-rá-paa)",
    "cats": [
     "food and drink",
     "organisms"
@@ -6175,6 +6176,7 @@
    "t": "tulsi",
    "en": "holy basil",
    "pos": "Noun",
+   "ety": "From Sanskrit तुलसी (tulasī)",
    "cats": [
     "food and drink",
     "organisms"
