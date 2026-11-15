@@ -378,14 +378,6 @@
    "ety": "baane 'to grow' + -uts 'transitive suffix'"
   },
   {
-   "t": "baanilaa",
-   "en": "vanilla",
-   "pos": "Noun",
-   "cats": [
-    "food and drink"
-   ]
-  },
-  {
    "t": "baanoci",
    "en": "eel",
    "pos": "Noun",
@@ -5728,6 +5720,15 @@
     {
      "tlag": "Reject humanity, become crab"
     }
+   ]
+  },
+  {
+   "t": "tlilxotsitl",
+   "en": "vanilla",
+   "pos": "Noun",
+   "ety": "From Classical Nahuatl tlīlxōchitl",
+   "cats": [
+    "food and drink", "organisms"
    ]
   },
   {
