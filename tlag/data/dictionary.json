@@ -6428,6 +6428,9 @@
    "en": "turkey (bird)",
    "pos": "Noun",
    "ety": "From Classical Nahuatl huehxolotl",
+   "cats": [
+    "food and drink", "organisms"
+   ],
    "ex": [
     {
      "tlag": "We're going back in time to the first Thanksgiving to get turkeys off the menu"
