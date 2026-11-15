@@ -727,6 +727,21 @@
    "pos": "Noun",
    "ety": "a priori"
   },
+   {
+   "t": "cetesantatlu",
+   "en": "procyonid",
+   "pos": "Noun",
+   "ety": "from Toki Pona kijetesantaklu, itself from Finnish kierteishäntäkarhu",
+    "cats": [
+    "organisms"
+   ],
+   "ex": [
+    {
+     "tlag": "Does the nonbinary procyonid steal mushrooms",
+     "gloss": "INT steal procyonid nonbinary mushroom"
+    }
+   ]
+  },
   {
    "t": "cig",
    "en": "line",
