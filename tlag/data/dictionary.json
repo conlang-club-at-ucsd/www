@@ -1,7 +1,7 @@
 {
  "_readme": "Source of truth for the tlag dictionary. Edit entries here (keep array order stable; new words slot in alphabetically by 't'), then run: node scripts/build-tlag.mjs",
- "updated": "2026-10-04",
- "count": 906,
+ "updated": "2026-11-14",
+ "count": 911,
  "entries": [
   {
    "t": "a",
@@ -12,7 +12,7 @@
   },
   {
    "t": "aabaakaatl",
-   "en": "avocado", "lawyer (humorous)"
+   "en": "avocado, lawyer (humorous)",
    "ipa": "[ɑ.b̪͡vɑ.kʼɑʈ͡ɭ˔]",
    "pos": "Noun",
    "ety": "from Nahuatl",
@@ -161,13 +161,13 @@
   {
    "t": "agaairisir",
    "en": "neuroscience",
-   "pos": "Noun",
+   "pos": "Noun"
   },
   {
    "t": "agaa'upilaa",
    "en": "brainworm",
    "pos": "Noun",
-   "ety": "agaa 'brain' + upilaa 'worm', calque of English brainworm",
+   "ety": "agaa 'brain' + upilaa 'worm', calque of English brainworm"
   },
   {
    "t": "agari",
