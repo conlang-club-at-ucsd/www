@@ -3607,15 +3607,6 @@
    ]
   },
   {
-   "t": "merikaa",
-   "en": "turkey (bird)",
-   "ex": [
-    {
-     "tlag": "We're going back in time to the first Thanksgiving to get turkeys off the menu"
-    }
-   ]
-  },
-  {
    "t": "mesu",
    "en": "to despise, to treat with contempt",
    "pos": "Verb",
@@ -6430,6 +6421,17 @@
    "pos": "Noun",
    "cats": [
     "anatomy"
+   ]
+  },
+  {
+   "t": "uesolotl",
+   "en": "turkey (bird)",
+   "pos": "Noun",
+   "ety": "From Classical Nahuatl huehxolotl",
+   "ex": [
+    {
+     "tlag": "We're going back in time to the first Thanksgiving to get turkeys off the menu"
+    }
    ]
   },
   {
