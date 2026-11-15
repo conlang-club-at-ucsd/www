@@ -2516,7 +2516,12 @@
   },
   {
    "t": "karelekpaali",
-   "en": "phonetician"
+   "en": "phonetician",
+   "pos": "Noun",
+   "ety": "karelek 'phonetics' + -paali 'agentive suffix",
+   "cats": [
+    "linguistics"
+   ]
   },
   {
    "t": "Kartuli",
@@ -5362,7 +5367,12 @@
   },
   {
    "t": "svtaajlvrpaali",
-   "en": "computational phonetician"
+   "en": "computational phonetician",
+   "pos": "Noun",
+   "ety": "svtaajlvr 'phonetics' + -paali 'agentive suffix'",
+   "cats": [
+    "linguistics"
+   ]
   },
   {
    "t": "svtaajlvr",
