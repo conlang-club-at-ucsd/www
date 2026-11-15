@@ -241,15 +241,6 @@
    ]
   },
   {
-   "t": "ananas",
-   "en": "pineapple",
-   "pos": "Noun",
-   "cats": [
-    "food and drink",
-    "organisms"
-   ]
-  },
-  {
    "t": "anos",
    "en": "honey",
    "pos": "Noun",
@@ -4184,6 +4175,16 @@
    "en": "or (inclusive)",
    "pos": "Conjunction",
    "ety": "a priori"
+  },
+  {
+   "t": "nanaa",
+   "en": "pineapple",
+   "pos": "Noun",
+   "ety": "From Old Tupi naná",
+   "cats": [
+    "food and drink",
+    "organisms"
+   ]
   },
   {
    "t": "narifv",
