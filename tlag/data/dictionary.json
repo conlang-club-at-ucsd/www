@@ -4171,7 +4171,7 @@
    "ex": [
     {
      "tlag": "What is the charge? Eating a meal? A succulent Chinese meal?",
-     "gloss": "INT charge be-what eat meal succulent meal Chinese"
+     "gloss": "INT charge be-what eat meal meal Chinese succulent"
     }
    ]
   },
@@ -4744,7 +4744,7 @@
    "ex": [
     {
      "tlag": "Go to horny jail!",
-     "gloss": "IMP-go jail horny to"
+     "gloss": "IMP-go jail horny DAT"
     }
    ]
   },
@@ -5543,8 +5543,8 @@
    "ety": "from Danish dansk",
    "ex": [
     {
-     "tlag": "vm iko tansvm - It's Greek to me",
-     "gloss": "me DAT Danish"
+     "tlag": "vm iko tansvleg - It's Greek to me",
+     "gloss": "Danish-VERB 1S DAT"
     }
    ]
   },
@@ -7140,7 +7140,7 @@
    "ex": [
     {
      "tlag": "I don't like them putting chemicals in the water that turn the fricking frogs gay!",
-     "gloss": "like-not that.COMP IRR-put chemical water in that.REL turn fricking frog gay"
+     "gloss": "like-not that.COMP IRR-put chemical water LOC that.REL gay-do fricking frog"
     }
    ]
   },
