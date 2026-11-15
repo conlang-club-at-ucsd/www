@@ -5362,7 +5362,16 @@
   },
   {
    "t": "svtailvrpaali",
-   "en": "computational linguist"
+   "en": "computational phonetician"
+  },
+  {
+   "t": "svtaailvr",
+   "en": "computational phonetics",
+   "pos": "Noun",
+   "ety": "from Will Styler",
+   "cats": [
+    "linguistics"
+   ]
   },
   {
    "t": "svtol",
