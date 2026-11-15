@@ -3394,8 +3394,9 @@
    "cats": [
     "pathology"
    ]
+  },
   {
-     "t": "maaraato",
+   "t": "maaraato",
    "en": "fennel",
    "pos": "Noun",
    "ety": "From Greek μάραθο",
