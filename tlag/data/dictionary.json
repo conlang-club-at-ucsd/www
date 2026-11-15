@@ -2398,6 +2398,15 @@
    ]
   },
   {
+   "t": "kabajero",
+   "en": "study of the Indigenous languages of the Americas",
+   "pos": "Noun",
+   "ety": "from Gabriela Caballero",
+   "cats": [
+    "linguistics"
+   ]
+  },
+  {
    "t": "kabotsa",
    "en": "kabocha",
    "pos": "Noun",
@@ -4975,6 +4984,15 @@
    "ety": "a priori",
    "cats": [
     "food and drink"
+   ]
+  },
+  {
+   "t": "roz",
+   "en": "study of the Indigenous languages of Africa",
+   "pos": "Noun",
+   "ety": "from Sharon Rose",
+   "cats": [
+    "linguistics"
    ]
   },
   {
