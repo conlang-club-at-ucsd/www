@@ -15,7 +15,7 @@
    "en": "avocado, lawyer (humorous)",
    "ipa": "[ɑ.b̪͡vɑ.kʼɑʈ͡ɭ˔]",
    "pos": "Noun",
-   "ety": "from Nahuatl",
+   "ety": "from Classical Nahuatl āhuacatl",
    "cats": [
     "food and drink"
    ]
@@ -41,6 +41,7 @@
    "en": "alpaca",
    "ipa": "[ɑɮ.pʼɑ.kʼɑ]",
    "pos": "Noun",
+   "ety": "From Aymara allpaqa",
    "cats": [
     "organisms"
    ]
@@ -50,7 +51,7 @@
    "en": "mango",
    "ipa": "[ɑ.mɑ]",
    "pos": "Noun",
-   "ety": "from Sanskrit",
+   "ety": "from Sanskrit आ॒म्र (āmrá)",
    "cats": [
     "food and drink"
    ]
@@ -60,6 +61,7 @@
    "en": "phone",
    "ipa": "[ɑ.mæ.i.xo]",
    "pos": "Noun",
+   "ety": "?",
    "cats": [
     "technology"
    ]
@@ -69,7 +71,7 @@
    "en": "Amharic language",
    "ipa": "[ɑ.mə.ɾə̃ɲ.jə]",
    "pos": "Proper noun",
-   "ety": "from Amharic",
+   "ety": "from Amharic አማርኛ (ʾämarəñña)",
    "cats": [
     "languages"
    ]
@@ -79,7 +81,7 @@
    "en": "anime",
    "ipa": "[ɑ.ni.mɛ]",
    "pos": "Noun",
-   "ety": "from Japanese",
+   "ety": "from Japanese アニメ (anime)",
    "ex": [
     {
      "tlag": "I have the power of God and anime on my side!"
@@ -91,7 +93,7 @@
    "en": "axolotl",
    "ipa": "[ɑʂoɮoʈ͡ɭ˔]",
    "pos": "Noun",
-   "ety": "from Nahuatl",
+   "ety": "from Classical Nahuatl āxōlōtl",
    "cats": [
     "organisms"
    ]
