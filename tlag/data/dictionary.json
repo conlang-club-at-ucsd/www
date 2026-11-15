@@ -413,6 +413,16 @@
     "weather"
    ]
   },
+    {
+   "t": "baasiliko",
+   "en": "Italian basil",
+   "pos": "Noun",
+   "ety": "From Italian basilico",
+   "cats": [
+    "food and drink",
+    "organisms"
+   ]
+  },
   {
    "t": "baaxet",
    "en": "to pray, to petition",
@@ -420,15 +430,6 @@
    "ety": "a priori",
    "cats": [
     "religion"
-   ]
-  },
-  {
-   "t": "baazil",
-   "en": "Italian basil",
-   "pos": "Noun",
-   "cats": [
-    "food and drink",
-    "organisms"
    ]
   },
   {
