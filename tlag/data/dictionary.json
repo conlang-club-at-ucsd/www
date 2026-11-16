@@ -4475,6 +4475,12 @@
    ]
   },
   {
+   "t": "okrvn",
+   "en": "to create a romanization system for a language that uses capital letters for certain phonemes",
+   "pos": "Verb",
+   "ety": "from Marc Okrand and his habit of doing this"
+  },
+  {
    "t": "ol",
    "en": "no",
    "pos": "Interjection",
