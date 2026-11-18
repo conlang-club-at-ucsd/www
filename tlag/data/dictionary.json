@@ -5634,7 +5634,13 @@
    ]
   },
   {
-   "t": "tiizumsig",
+   "t": "tijeses",
+   "en": "dysfunctional or half-baked website",
+   "pos": "Noun",
+   "ety": "From TSS (Triton Student System)"
+  },
+  {
+   "t": "tijizumsig",
    "en": "tetrahedron",
    "cats": [
     "mathematics"
