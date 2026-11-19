@@ -2973,6 +2973,30 @@
    "ety": "a priori"
   },
   {
+   "t": "kuribuleg",
+   "en": "to thirst, to be thirsty",
+   "pos": "Noun",
+   "ety": "kuribu 'thirst' + -leg 'verbal suffix'"
+  },
+  {
+   "t": "kuribuleguts",
+   "en": "to cause to be thirsty",
+   "pos": "Noun",
+   "ety": "kuribuleg 'to thirst' + -uts 'transitive/causative suffix'",
+   "ex": [
+    {
+     "en": "It's the thirstiest time of the year (lit. this time of the year causes one to thirst the most)",
+     "gloss": "thirst-CAUS-SUP year-GEN time this"
+    }
+   ]
+  },
+  {
+   "t": "kuribuxeu",
+   "en": "thirsty",
+   "pos": "Noun",
+   "ety": "kuribu 'thirst' + -xeu 'adjectival suffix'"
+  },
+  {
    "t": "kurig",
    "en": "bison",
    "pos": "Noun",
