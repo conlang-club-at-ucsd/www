@@ -100,9 +100,9 @@
   },
   {
    "t": "aastox",
-   "en": "real, true",
+   "en": "reality, truth",
    "ipa": "[ɑʂ.ʈox]",
-   "pos": "Adjective",
+   "pos": "Noun",
    "ety": "a priori"
   },
   {
@@ -271,14 +271,6 @@
      "tlag": "atxu oriee u fvnvacaamus",
      "en": "evil and intimidating horse"
     }
-   ]
-  },
-  {
-   "t": "atxu xucnaamiakux",
-   "en": "zebra",
-   "pos": "Noun",
-   "cats": [
-    "organisms"
    ]
   },
   {
@@ -775,7 +767,7 @@
   {
    "t": "cina",
    "en": "brown",
-   "pos": "Adjective",
+   "pos": "Noun",
    "ety": "from Sina",
    "cats": [
     "colors"
@@ -979,7 +971,7 @@
   {
    "t": "euzo",
    "en": "blue",
-   "pos": "Adjective",
+   "pos": "Noun",
    "ety": "a priori",
    "cats": [
     "colors"
@@ -1118,7 +1110,7 @@
   {
    "t": "gimitli",
    "en": "green",
-   "pos": "Adjective",
+   "pos": "Noun",
    "ety": "a priori",
    "cats": [
     "colors"
@@ -2740,7 +2732,7 @@
   {
    "t": "kiro",
    "en": "yellow",
-   "pos": "Adjective",
+   "pos": "Noun",
    "ety": "a priori",
    "cats": [
     "colors"
@@ -3104,14 +3096,6 @@
    "en": "dolphin",
    "pos": "Noun",
    "ety": "a priori",
-   "cats": [
-    "organisms"
-   ]
-  },
-  {
-   "t": "kvmur xucnaamiakux",
-   "en": "orca",
-   "pos": "Noun",
    "cats": [
     "organisms"
    ]
@@ -3682,7 +3666,7 @@
   {
    "t": "miakux",
    "en": "white",
-   "pos": "Adjective",
+   "pos": "Noun",
    "ety": "a priori",
    "cats": [
     "colors"
@@ -4402,7 +4386,7 @@
   {
    "t": "nukaal",
    "en": "orange (color)",
-   "pos": "Adjective",
+   "pos": "Noun",
    "ety": "a priori",
    "cats": [
     "colors"
@@ -6888,14 +6872,6 @@
    ]
   },
   {
-   "t": "xaarof xucnaamiakux",
-   "en": "giant panda",
-   "pos": "Noun",
-   "cats": [
-    "organisms"
-   ]
-  },
-  {
    "t": "xabut",
    "en": "whale",
    "pos": "Noun",
@@ -6978,12 +6954,36 @@
    ]
   },
   {
-   "t": "xucna",
+   "t": "xucnaa",
    "en": "black",
-   "pos": "Adjective",
+   "pos": "Noun",
    "ety": "a priori",
    "cats": [
     "colors"
+   ]
+  },
+  {
+   "t": "xucnaamiakux atxu",
+   "en": "zebra",
+   "pos": "Noun",
+   "cats": [
+    "organisms"
+   ]
+  },
+  {
+   "t": "xucnaamiakux kvmur",
+   "en": "orca",
+   "pos": "Noun",
+   "cats": [
+    "organisms"
+   ]
+  },
+  {
+   "t": "xucnaamiakux xaarof",
+   "en": "giant panda",
+   "pos": "Noun",
+   "cats": [
+    "organisms"
    ]
   },
   {
