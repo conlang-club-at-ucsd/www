@@ -1,10 +1,13 @@
-// tlag word of the day: deterministic pick by Pacific date (America/Los_Angeles), caches into localstorage
+// wotd: stores one word per pacific date, so past days never change. fallback to locally cached copy, and
+// failing that to a deterministic pick from the dictionary.
 (function () {
   'use strict';
 
   var LS_DICT = 'tlag.dict.v1';
   var LS_STATE = 'tlag.wotd.v1';
+  var LS_HIST = 'tlag.wotd.history.v1';
   var WOTD_TZ = 'America/Los_Angeles';
+  var DEFAULT_API = '/api/wotd';
 
   function todayKeyPST(d) {
     d = d || new Date();
@@ -24,15 +27,6 @@
     return new Date(key + 'T12:00:00Z');
   }
 
-  function shiftKey(key, days) {
-    // Shift by calendar days in Pacific time: operate on the YYYY-MM-DD parts directly
-    var parts = String(key).split('-');
-    var d = new Date(Date.UTC(+parts[0], +parts[1] - 1, +parts[2] + days));
-    var mm = ('0' + (d.getUTCMonth() + 1)).slice(-2);
-    var dd = ('0' + d.getUTCDate()).slice(-2);
-    return d.getUTCFullYear() + '-' + mm + '-' + dd;
-  }
-
   function prettyKey(key) {
     try {
       return parseKey(key).toLocaleDateString(undefined, {
@@ -43,7 +37,7 @@
     }
   }
 
-  // cyrb53 hash, good enough
+  // cyrb53 hash, only used by the offline dictionary fallback
   function hashStr(str, seed) {
     var h1 = 0xdeadbeef ^ seed, h2 = 0x41c6ce57 ^ seed;
     for (var i = 0; i < str.length; i++) {
@@ -80,9 +74,22 @@
 
   function loadState() {
     var s = readLS(LS_STATE) || {};
-    if (!s.seen || typeof s.seen !== 'object') s.seen = {};
     if (!Array.isArray(s.favs)) s.favs = [];
+    delete s.seen; // old client-side "recent" log; the server history replaces it
     return s;
+  }
+
+  // ---- data: { today, dates: [sorted YYYY-MM-DD], byDate: { date: entry } } ----
+
+  function normalize(raw) {
+    if (!raw || typeof raw.today !== 'string' || !Array.isArray(raw.history)) return null;
+    var byDate = {};
+    raw.history.forEach(function (h) {
+      if (h && typeof h.date === 'string' && h.entry) byDate[h.date] = h.entry;
+    });
+    var dates = Object.keys(byDate).sort();
+    if (!dates.length) return null;
+    return { today: raw.today, dates: dates, byDate: byDate };
   }
 
   function loadDict(url) {
@@ -99,6 +106,33 @@
     });
   }
 
+  function loadData(apiUrl, dictUrl) {
+    return fetch(apiUrl, { headers: { Accept: 'application/json' } }).then(function (res) {
+      if (!res.ok) throw new Error(res.status + ' ' + res.statusText);
+      return res.json();
+    }).then(function (raw) {
+      var data = normalize(raw);
+      if (!data) throw new Error('unexpected wotd response');
+      writeLS(LS_HIST, raw);
+      return data;
+    }).catch(function (err) {
+      console.warn('[wotd] api unavailable, falling back:', err);
+      var cached = normalize(readLS(LS_HIST));
+      var today = todayKeyPST();
+      if (cached && cached.byDate[today]) {
+        cached.today = today;
+        return cached;
+      }
+      return loadDict(dictUrl).then(function (dict) {
+        var by = {};
+        by[today] = pickForDate(dict.entries, today).entry;
+        return { today: today, dates: [today], byDate: by };
+      });
+    });
+  }
+
+  // ---- rendering ----
+
   function esc(s) {
     return String(s ?? '')
       .replace(/&/g, '&amp;')
@@ -107,13 +141,17 @@
       .replace(/"/g, '&quot;');
   }
 
-  function displayEn(entry) {
+  function plainEn(entry) {
     if (typeof entry.enHtml === 'string') {
       var tmp = document.createElement('span');
       tmp.innerHTML = entry.enHtml;
-      return esc(tmp.textContent || '');
+      return tmp.textContent || '';
     }
-    return esc(entry.en || '');
+    return entry.en || '';
+  }
+
+  function displayEn(entry) {
+    return esc(plainEn(entry));
   }
 
   function renderEntryHTML(entry) {
@@ -138,26 +176,22 @@
     return h;
   }
 
-  function renderWidget(box, dict, state, key, today) {
-    var entries = dict.entries;
-    var pick = pickForDate(entries, key);
-    var entry = pick.entry;
-
-    state.seen[key] = entry.t;
-    var seenKeys = Object.keys(state.seen).sort();
-    while (seenKeys.length > 60) delete state.seen[seenKeys.shift()];
-    writeLS(LS_STATE, state);
+  function renderWidget(box, data, state, key) {
+    var entry = data.byDate[key];
+    var idx = data.dates.indexOf(key);
+    var prevKey = idx > 0 ? data.dates[idx - 1] : null;
+    var nextKey = idx > -1 && idx < data.dates.length - 1 ? data.dates[idx + 1] : null;
+    var isToday = key === data.today;
 
     var glossHref = box.getAttribute('data-gloss') || 'gloss/';
     var fav = state.favs.indexOf(entry.t) > -1;
-    var isToday = key === today;
 
     var h = ''
       + '<div class="wotd-top"><span class="tag wotd-date">' + esc(isToday ? 'Today · ' + prettyKey(key) : prettyKey(key)) + '</span>'
       + '<span class="wotd-nav" role="group" aria-label="Browse other days">'
-      + '<button type="button" class="wotd-btn" data-act="prev" aria-label="Previous day">‹</button>'
+      + '<button type="button" class="wotd-btn" data-act="prev" aria-label="Previous day"' + (prevKey ? '' : ' disabled') + '>‹</button>'
       + (isToday ? '' : '<button type="button" class="wotd-btn wotd-btn--text" data-act="today">Today</button>')
-      + '<button type="button" class="wotd-btn" data-act="next" aria-label="Next day"' + (isToday ? ' disabled' : '') + '>›</button>'
+      + '<button type="button" class="wotd-btn" data-act="next" aria-label="Next day"' + (nextKey ? '' : ' disabled') + '>›</button>'
       + '</span></div>'
       + renderEntryHTML(entry)
       + '<div class="wotd-actions">'
@@ -166,10 +200,11 @@
       + '<a class="wotd-link" href="' + esc(glossHref) + '?w=' + encodeURIComponent(entry.t) + '">open in dictionary</a>'
       + '</div>';
 
-    var recent = Object.keys(state.seen).sort().slice(-6, -1).reverse();
+    // the five most recent days before the latest one
+    var recent = data.dates.slice(-6, -1).reverse();
     if (recent.length) {
       h += '<p class="wotd-recent"><span>recent:</span> ' + recent.map(function (k) {
-        return '<button type="button" class="wotd-chip" data-act="goto" data-date="' + esc(k) + '" title="' + esc(k) + '">' + esc(state.seen[k]) + '</button>';
+        return '<button type="button" class="wotd-chip" data-act="goto" data-date="' + esc(k) + '" title="' + esc(k) + '">' + esc(data.byDate[k].t) + '</button>';
       }).join(' ') + '</p>';
     }
     box.innerHTML = h;
@@ -177,19 +212,18 @@
     box.querySelectorAll('button').forEach(function (btn) {
       btn.addEventListener('click', function () {
         var act = btn.getAttribute('data-act');
-        if (act === 'prev') renderWidget(box, dict, state, shiftKey(key, -1), today);
-        else if (act === 'next' && !isToday) renderWidget(box, dict, state, shiftKey(key, 1), today);
-        else if (act === 'today') renderWidget(box, dict, state, today, today);
-        else if (act === 'goto') renderWidget(box, dict, state, btn.getAttribute('data-date'), today);
+        if (act === 'prev' && prevKey) renderWidget(box, data, state, prevKey);
+        else if (act === 'next' && nextKey) renderWidget(box, data, state, nextKey);
+        else if (act === 'today') renderWidget(box, data, state, data.today);
+        else if (act === 'goto') renderWidget(box, data, state, btn.getAttribute('data-date'));
         else if (act === 'fav') {
           var i = state.favs.indexOf(entry.t);
           if (i > -1) state.favs.splice(i, 1);
           else state.favs.push(entry.t);
           writeLS(LS_STATE, state);
-          renderWidget(box, dict, state, key, today);
+          renderWidget(box, data, state, key);
         } else if (act === 'copy') {
-          var text = 'tlag word of the day ' + key + ': ' + entry.t + ': ' + (entry.en || '');
-          copyText(text, btn);
+          copyText('tlag word of the day ' + key + ': ' + entry.t + ': ' + plainEn(entry), btn);
         }
       });
     });
@@ -218,19 +252,22 @@
     }
   }
 
-  function renderStrip(el, dict) {
-    var key = todayKeyPST();
-    if (!dict.entries.length) return;
-    var entry = pickForDate(dict.entries, key).entry;
+  function renderStrip(el, data) {
+    var entry = data.byDate[data.today] || data.byDate[data.dates[data.dates.length - 1]];
+    var key = data.byDate[data.today] ? data.today : data.dates[data.dates.length - 1];
     el.innerHTML = 'Word of the day (' + esc(key) + '): '
       + '<a href="?w=' + encodeURIComponent(entry.t) + '"><strong class="tl">' + esc(entry.t) + '</strong>: ' + displayEn(entry) + '</a>';
   }
 
   function fail(box, err) {
-    console.error('[wotd] Could not load dictionary:', err);
+    console.error('[wotd] Could not load the word of the day:', err);
     var gloss = box.getAttribute('data-gloss') || 'gloss/';
     box.innerHTML = '<p class="wotd-error">Could not load today\u2019s word. '
       + '<a href="' + esc(gloss) + '">Browse the full dictionary</a> instead.</p>';
+  }
+
+  function showToday(data) {
+    return data.byDate[data.today] ? data.today : data.dates[data.dates.length - 1];
   }
 
   document.addEventListener('DOMContentLoaded', function () {
@@ -238,32 +275,19 @@
     var strips = Array.prototype.slice.call(document.querySelectorAll('[data-wotd-strip]'));
     if (!widgets.length && !strips.length) return;
 
-    var urls = {};
-    widgets.concat(strips).forEach(function (el) {
-      var u = el.getAttribute('data-dict')
-        || (el.hasAttribute('data-wotd-strip') ? '../data/dictionary.json' : 'data/dictionary.json');
-      urls[u] = true;
-    });
+    var first = widgets[0] || strips[0];
+    var apiUrl = first.getAttribute('data-wotd-api') || DEFAULT_API;
+    var dictUrl = first.getAttribute('data-dict')
+      || (first.hasAttribute('data-wotd-strip') ? '../data/dictionary.json' : 'data/dictionary.json');
 
-    Object.keys(urls).forEach(function (url) {
-      loadDict(url).then(function (dict) {
-        var state = loadState();
-        var today = todayKeyPST();
-        widgets.filter(function (el) {
-          return (el.getAttribute('data-dict') || 'data/dictionary.json') === url;
-        }).forEach(function (el) {
-          renderWidget(el, dict, state, today, today);
-        });
-        strips.filter(function (el) {
-          return (el.getAttribute('data-dict') || '../data/dictionary.json') === url;
-        }).forEach(function (el) {
-          renderStrip(el, dict);
-        });
-      }).catch(function (err) {
-        widgets.forEach(function (el) { fail(el, err); });
-        strips.forEach(function (el) {
-          el.innerHTML = 'Word of the day is unavailable offline. <a href="gloss/">Browse the dictionary</a>.';
-        });
+    loadData(apiUrl, dictUrl).then(function (data) {
+      var state = loadState();
+      widgets.forEach(function (el) { renderWidget(el, data, state, showToday(data)); });
+      strips.forEach(function (el) { renderStrip(el, data); });
+    }).catch(function (err) {
+      widgets.forEach(function (el) { fail(el, err); });
+      strips.forEach(function (el) {
+        el.innerHTML = 'Word of the day is unavailable offline. <a href="gloss/">Browse the dictionary</a>.';
       });
     });
   });
@@ -271,9 +295,6 @@
   // exposed for testing / debugging in the console
   window.TlagWotd = {
     todayKeyPST: todayKeyPST,
-    todayKeyUTC: todayKeyPST, // legacy alias
-    shiftKey: shiftKey,
-    hashStr: hashStr,
-    pickForDate: pickForDate
+    todayKeyUTC: todayKeyPST // legacy alias
   };
 })();

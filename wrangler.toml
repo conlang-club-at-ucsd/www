@@ -20,3 +20,7 @@ crons = ["0 * * * *"]
 [vars]
 SITE_URL = "https://conlangatucsd.com/tlag/gloss/"
 POST_HOUR = "8"   # 0-23, Pacific time
+
+# stores the word of the day history.
+[[kv_namespaces]]
+binding = "WOTD_KV"
