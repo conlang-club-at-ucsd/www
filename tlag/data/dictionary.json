@@ -3101,9 +3101,19 @@
    ]
   },
   {
+   "t": "kvraampues",
+   "en": "crêpe",
+   "pos": "Noun",
+   "ety": "From Breton krampouezh",
+   "cats": [
+    "food and drink"
+   ]
+  },
+  {
    "t": "kvrem",
    "en": "cream",
    "pos": "Noun",
+   "ety": "From French crème",
    "cats": [
     "food and drink"
    ]
