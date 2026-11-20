@@ -101,7 +101,7 @@ async function define(env, query) {
   if (!near.length) return privateReply(`No Tlag word or English meaning matches ${quote(query)}.`);
   return privateReply(
     `No Tlag word spelled ${quote(query)}. Closest matches:\n` +
-      near.map(({ entry }) => `• **${entry.t}** — ${englishOf(entry)}`).join('\n') +
+      near.map(({ entry }) => `• **${entry.t}** - ${englishOf(entry)}`).join('\n') +
       '\n-# Run /define with one of these.',
   );
 }
