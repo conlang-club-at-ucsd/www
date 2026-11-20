@@ -1,9 +1,9 @@
 // canonical layout lives on the main site; subdomains fetch it cross-origin.
-// GitHub Pages serves `Access-Control-Allow-Origin: *`, so this works on a
-// completely static setup with no server config. local copy is fallback only.
+
 var LAYOUT_URLS = [
+  'https://conlangatucsd.com/partials/layout',
   'https://conlangatucsd.com/partials/layout.html',
-  '/partials/layout.html'
+  '/partials/layout'
 ];
 
 // i hate regex (normalizes /about, about, or about/ (this is an example))

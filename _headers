@@ -1,0 +1,4 @@
+# the tools webpages depend on Access-Control-Allow-Origin: *  to
+# fetch the shared layout, styles, and tlag data
+/*
+  Access-Control-Allow-Origin: *

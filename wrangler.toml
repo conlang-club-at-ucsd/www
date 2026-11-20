@@ -1,0 +1,24 @@
+name = "conlang-site"
+main = "src/worker.js"
+compatibility_date = "2026-11-01"
+
+[assets]
+directory = "."
+binding = "ASSETS"
+html_handling = "auto-trailing-slash"   
+not_found_handling = "404-page"         # serves  nearest 404.html
+run_worker_first = ["/api/*"]           # everything else is served as a static asset
+
+[triggers]
+crons = ["0 * * * *"]
+
+[vars]
+SITE_URL = "https://conlangatucsd.com/tlag/gloss/"
+POST_HOUR = "8"   # 0-23, Pacific time
+
+# Leave this commented out.
+#
+# routes = [
+#   { pattern = "conlangatucsd.com", custom_domain = true },
+#   { pattern = "www.conlangatucsd.com", custom_domain = true },
+# ]

@@ -1,0 +1,16 @@
+node_modules/
+.wrangler/
+.dev.vars
+.github/
+.node-version
+.gitignore
+.assetsignore
+scripts/
+src/
+wrangler.toml
+package.json
+package-lock.json
+CNAME
+feature_ideas.md
+README*
+projects/raw-md-files/
