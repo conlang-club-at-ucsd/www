@@ -16,9 +16,7 @@ crons = ["0 * * * *"]
 SITE_URL = "https://conlangatucsd.com/tlag/gloss/"
 POST_HOUR = "8"   # 0-23, Pacific time
 
-# Leave this commented out.
-#
-# routes = [
-#   { pattern = "conlangatucsd.com", custom_domain = true },
-#   { pattern = "www.conlangatucsd.com", custom_domain = true },
-# ]
+routes = [
+   { pattern = "conlangatucsd.com", custom_domain = true },
+   { pattern = "www.conlangatucsd.com", custom_domain = true },
+]
