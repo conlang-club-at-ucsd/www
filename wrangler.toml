@@ -2,6 +2,11 @@ name = "conlang-site"
 main = "src/worker.js"
 compatibility_date = "2026-11-01"
 
+routes = [
+   { pattern = "conlangatucsd.com", custom_domain = true },
+   { pattern = "www.conlangatucsd.com", custom_domain = true },
+]
+
 [assets]
 directory = "."
 binding = "ASSETS"
@@ -15,8 +20,3 @@ crons = ["0 * * * *"]
 [vars]
 SITE_URL = "https://conlangatucsd.com/tlag/gloss/"
 POST_HOUR = "8"   # 0-23, Pacific time
-
-routes = [
-   { pattern = "conlangatucsd.com", custom_domain = true },
-   { pattern = "www.conlangatucsd.com", custom_domain = true },
-]
