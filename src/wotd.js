@@ -31,7 +31,7 @@ function hashStr(str, seed) {
 }
 
 const stripTags = (s) => String(s ?? '').replace(/<[^>]*>/g, '').trim();
-const englishOf = (e) => (typeof e.enHtml === 'string' ? stripTags(e.enHtml) : e.en || '');
+export const englishOf = (e) => (typeof e.enHtml === 'string' ? stripTags(e.enHtml) : e.en || '');
 
 // the dictionary has a few homographs, so identify an entry by more than its headword
 const entryId = (e) => JSON.stringify([e.t, englishOf(e), e.pos || '']);
@@ -51,7 +51,7 @@ async function loadHistory(env) {
   return Array.isArray(h) ? h : [];
 }
 
-async function loadDictionary(env) {
+export async function loadDictionary(env) {
   const res = await env.ASSETS.fetch('https://assets.invalid/tlag/data/dictionary.json');
   if (!res.ok) throw new Error(`dictionary read failed: ${res.status}`);
   const dict = await res.json();
@@ -80,7 +80,8 @@ export async function wotdJson(env) {
   return { today: key, history };
 }
 
-export function buildPayload(entry, key, siteUrl) {
+// one dictionary entry as a discord embed. shared by the daily post and the slash commands.
+export function entryEmbed(entry, siteUrl, footerText) {
   const meta = [entry.ipa, entry.pos && `*${entry.pos}*`, ...(entry.cats || [])].filter(Boolean).join(' · ');
   const lines = [meta, `**${englishOf(entry)}**`, entry.ety && `_${entry.ety}_`].filter(Boolean);
 
@@ -90,16 +91,21 @@ export function buildPayload(entry, key, siteUrl) {
     if (x.gloss) lines.push(`> -# ${x.gloss}`);
   }
 
+  const embed = {
+    title: entry.t,
+    url: `${siteUrl}?w=${encodeURIComponent(entry.t)}`,
+    description: lines.join('\n').slice(0, 4000),
+    color: 0x8a6bd1,
+  };
+  if (footerText) embed.footer = { text: footerText };
+  return embed;
+}
+
+export function buildPayload(entry, key, siteUrl) {
   return {
     username: 'Tlag Word of the Day',
     allowed_mentions: { parse: [] }, // never ping anyone (may change if wotd only role?)
-    embeds: [{
-      title: entry.t,
-      url: `${siteUrl}?w=${encodeURIComponent(entry.t)}`,
-      description: lines.join('\n').slice(0, 4000),
-      footer: { text: `Word of the day · ${key}` },
-      color: 0x8a6bd1,
-    }],
+    embeds: [entryEmbed(entry, siteUrl, `Word of the day · ${key}`)],
   };
 }
 

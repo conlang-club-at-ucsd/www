@@ -1,6 +1,7 @@
 //  entry port
 
 import { postWotd, wotdJson, sayToDiscord } from './wotd.js';
+import { handleInteraction } from './discord.js';
 
 const DISCORD_MAX = 2000;
 
@@ -74,6 +75,10 @@ export default {
         console.error('[wotd]', err);
         return json({ error: 'wotd unavailable' }, 500);
       }
+    }
+
+    if (url.pathname === '/api/discord/interactions') { // slash commands, signed by discord
+      return handleInteraction(req, env);
     }
 
     if (url.pathname.startsWith('/api/admin/')) {

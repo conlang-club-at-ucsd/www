@@ -6,7 +6,8 @@
     "build": "node scripts/build-content.mjs && node scripts/build-tlag.mjs && node scripts/build-sitemap.mjs",
     "dev": "npm run build && wrangler dev",
     "deploy": "npm run build && wrangler deploy",
-    "say": "node scripts/say.mjs"
+    "say": "node scripts/say.mjs",
+    "register": "node scripts/register-commands.mjs"
   },
   "devDependencies": {
     "wrangler": "^4"
