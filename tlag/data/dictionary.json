@@ -11,16 +11,6 @@
    "ety": "a priori"
   },
   {
-   "t": "aabaakaatl",
-   "en": "avocado, lawyer (humorous)",
-   "ipa": "[ɑ.b̪͡vɑ.kʼɑʈ͡ɭ˔]",
-   "pos": "Noun",
-   "ety": "from Classical Nahuatl āhuacatl",
-   "cats": [
-    "food and drink"
-   ]
-  },
-  {
    "t": "aahostol",
    "en": "shop, store",
    "ipa": "[ɑ.ho.ʂʈʼoɮ]",
@@ -104,6 +94,16 @@
    "ipa": "[ɑʂ.ʈox]",
    "pos": "Noun",
    "ety": "a priori"
+  },
+  {
+   "t": "aauaakaatl",
+   "en": "avocado, lawyer (humorous)",
+   "ipa": "[ɑ.b̪͡vɑ.kʼɑʈ͡ɭ˔]",
+   "pos": "Noun",
+   "ety": "from Classical Nahuatl āhuacatl",
+   "cats": [
+    "food and drink"
+   ]
   },
   {
    "t": "aax",
