@@ -1873,6 +1873,14 @@
    "pos": "Noun"
   },
   {
+   "t": "itlitaaxv",
+   "en": "methane",
+   "pos": "Noun",
+   "cats": [
+    "chemistry"
+   ]
+  },
+  {
    "t": "itliuno",
    "en": "unity, union",
    "pos": "Noun"
@@ -3534,14 +3542,6 @@
    "cats": [
     "numbers",
     "mathematics"
-   ]
-  },
-  {
-   "t": "majekmic taaxv",
-   "en": "methane",
-   "pos": "Noun",
-   "cats": [
-    "chemistry"
    ]
   },
   {
