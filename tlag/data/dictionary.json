@@ -1858,6 +1858,12 @@
    "pos": "Verb",
    "ety": "a priori"
   },
+   {
+   "t": "itli",
+   "en": "one",
+   "pos": "Numeral",
+   "ety": "a priori"
+  },
   {
    "t": "itli",
    "en": "idli",
@@ -1873,9 +1879,19 @@
    "pos": "Noun"
   },
   {
+   "t": "itlijimox",
+   "en": "methanol",
+   "pos": "Noun",
+   "ety": "itli 'one' + jimox 'alcohol'",
+   "cats": [
+    "chemistry"
+   ]
+  },
+  {
    "t": "itlitaaxv",
    "en": "methane",
    "pos": "Noun",
+   "ety": "itli 'one' + taaxv 'alkane'",
    "cats": [
     "chemistry"
    ]
