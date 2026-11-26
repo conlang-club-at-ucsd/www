@@ -3031,6 +3031,20 @@
    ]
   },
   {
+   "t": "kusej",
+   "en": "right, entitlement",
+   "pos": "Noun",
+   "ety": "a priori",
+   "cats": [
+    "law"
+   ],
+   "ex": [
+    {
+     "en": "Yuri is the right of all sentient beings"
+    }
+   ]
+  },
+  {
    "t": "kuson",
    "en": "edible mushroom",
    "pos": "Noun",
@@ -3255,7 +3269,7 @@
    "ety": "from Limmy",
    "ex": [
     {
-     "tlag": "kilogramme of steel"
+     "en": "kilogramme of steel"
     }
    ]
   },
@@ -3289,7 +3303,7 @@
    "ety": "a priori",
    "ex": [
     {
-     "tlag": "the children yearn for the mines"
+     "en": "the children yearn for the mines"
     }
    ]
   },
@@ -3904,8 +3918,8 @@
   },
   {
    "t": "mumik",
-   "en": "right",
-   "pos": "Adjective",
+   "en": "right side",
+   "pos": "Noun",
    "ety": "a priori"
   },
   {
