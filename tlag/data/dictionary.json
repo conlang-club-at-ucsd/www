@@ -6257,6 +6257,12 @@
    "ety": "a priori"
   },
   {
+   "t": "tugtugtugsahur",
+   "en": "to wake someone up at Ramadan using a kentongan",
+   "pos": "Verb",
+   "ety": "from Tung Tung Tung Sahur"
+  },
+  {
    "t": "tukaa",
    "en": "pumpkin, squash",
    "pos": "Noun",
@@ -6396,7 +6402,8 @@
   },
   {
    "t": "tuoligo",
-   "en": "evil green owl"
+   "en": "to use AI in your language learning app",
+   "pos": "Noun",
   },
   {
    "t": "tupaa",
