@@ -2682,10 +2682,17 @@
   {
    "t": "kihvn",
    "en": "gold",
+   "pos": "Noun",
+   "ety": "a priori",
    "cats": [
     "chemistry"
    ]
   },
+  {
+   "t": "kiki",
+   "en": "to be round or soft",
+   "pos": "Verb",
+   "ety": "from kiki",
   {
    "t": "kilaa",
    "en": "hand",
@@ -4895,6 +4902,12 @@
    "cats": [
     "food and drink"
    ]
+  },
+  {
+   "t": "pupaa",
+   "en": "to be spiky or hard",
+   "pos": "Verb",
+   "ety": "from bouba"
   },
   {
    "t": "puro",
